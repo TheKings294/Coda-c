@@ -16,4 +16,6 @@ int main()
     perso->wisdom = 15;
 
     printf("%s a %d en agility, %d en endurance, %d en inteligence, %d en force et %d en sagesse", perso->name, perso->agility, perso->endurance, perso->intelligence, perso->strength, perso->wisdom);
+
+    free(perso); 
 }
