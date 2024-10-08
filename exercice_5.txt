@@ -1,0 +1,4 @@
+cd ./marvel
+makdir avengers
+cp ./iron_man.txt ./avenger/iron_man.txt
+cp ./captain_america.txt ./avenger/captain_america.txt
