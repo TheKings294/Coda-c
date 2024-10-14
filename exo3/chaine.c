@@ -24,11 +24,23 @@ void add_to_end(number **list, int num) {
         tmp = tmp->next;
     }
 
-    number *to_add = malloc(sizeof(number));
-    to_add->value = num;
-    to_add->next = NULL;
+    if(tmp->value < num) {
+       number *to_add = malloc(sizeof(number));
+        to_add->value = num;
+        to_add->next = NULL;
+        tmp->next = to_add;
+    }else if(tmp->value < num && tmp->next->value > num) {
+        number *to_add = malloc(sizeof(number));
+        to_add->value = num;
+        to_add->next = tmp->next;
+        tmp->next = to_add;
+    } else if(tmp->value > num) {
+        number *to_add = malloc(sizeof(number));
+        to_add->value = num;
+        to_add->next = tmp;
+        *list = to_add;
+    }
 
-    tmp->next = to_add;
 }
 
 void add47(number **list) {

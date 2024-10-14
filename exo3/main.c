@@ -11,6 +11,7 @@ int main() {
     liste = num_new(nb);
 
    while (fin == 0) {
+     choixuser = 0;
        printf("Que souhaitez-vous faire ?\n");
        printf("Ajouter un nombre : (1)\n");
        printf("Afficher la liste : (2)\n");
