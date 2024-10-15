@@ -20,8 +20,23 @@ void delet(number **nume) {
 void add_to_end(number **list, int num) {
     number *tmp = *list;
 
+  if(tmp->value > num) {
+        number *to_add = malloc(sizeof(number));
+        to_add->value = num;
+        to_add->next = tmp;
+        *list = to_add;
+    }
+
     while (tmp->next != NULL) {
-        tmp = tmp->next;
+      if(tmp->value < num && tmp->next->value > num) {
+      number *ttmp = tmp->next;
+        number *to_add = malloc(sizeof(number));
+        to_add->value = num;
+        tmp->next = to_add;
+        to_add->next = ttmp;
+        return;
+    }
+      tmp = tmp->next;
     }
 
     if(tmp->value < num) {
@@ -29,18 +44,7 @@ void add_to_end(number **list, int num) {
         to_add->value = num;
         to_add->next = NULL;
         tmp->next = to_add;
-    }else if(tmp->value < num && tmp->next->value > num) {
-        number *to_add = malloc(sizeof(number));
-        to_add->value = num;
-        to_add->next = tmp->next;
-        tmp->next = to_add;
-    } else if(tmp->value > num) {
-        number *to_add = malloc(sizeof(number));
-        to_add->value = num;
-        to_add->next = tmp;
-        *list = to_add;
     }
-
 }
 
 void add47(number **list) {
