@@ -53,7 +53,7 @@ int main(void)
         return 1;
     }
     SDL_Rect position;
-    SDL_MouseMotionEvent mouse_motion;
+    //SDL_MouseMotionEvent mouse_motion;
     position.x = 100;
     position.y = 100;
     position.w = 16; // Spécifiez la largeur de la texture
