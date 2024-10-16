@@ -9,7 +9,7 @@ int main(void)
         return 1;
     }
 
-    SDL_Window* window = SDL_CreateWindow("Exo1 SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 160, 160, SDL_WINDOW_OPENGL);
+    SDL_Window* window = SDL_CreateWindow("Exo1 SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 320, 320, SDL_WINDOW_OPENGL);
     if (window == NULL) {
         printf("Error Window Creation\n");
         SDL_Quit();
@@ -52,17 +52,25 @@ int main(void)
         //SDL_Quit();
         return 1;
     }
-
+    SDL_Rect position;
+    SDL_MouseMotionEvent mouse_motion;
+    position.x = 100;
+    position.y = 100;
+    position.w = 16; // Spécifiez la largeur de la texture
+    position.h = 16;
     // Boucle principale
     while (1) {
         SDL_RenderClear(renderer);
-        SDL_RenderCopy(renderer, texture, NULL, NULL);
+        SDL_RenderCopy(renderer, texture, NULL, &position);
         SDL_RenderPresent(renderer);
         SDL_Event e;
         if (SDL_WaitEvent(&e)) {
             if (e.type == SDL_QUIT) {
                 break;
-            }
+            }else if (e.type == SDL_MOUSEBUTTONDOWN) { //Pour motion utilier SDL_MOUSEMOTION
+                position.x = e.button.x; // e.motion.x
+                position.y = e.button.y; // e.motion.y
+                }
         }
     }
 
