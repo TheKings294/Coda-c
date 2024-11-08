@@ -1,0 +1,3 @@
+cd ./shell
+cp ./marvel/black_widow.txt ./marvel/avenger/black_widow.txt && cp ./dc/wonder_woman.txt ./dc/justice_league/wonder_woman.txt
+ 

@@ -1,0 +1,4 @@
+cd ./dc
+mkdir justice_league 
+cp /Users/antoine/shell/dc/batman.txt  /Users/antoine/shell/dc/justice_league/ batman.txt
+cp /Users/antoine/shell/dc/superman.txt /Users/antoine/shell/dc/justice_league/superman.txt

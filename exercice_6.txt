@@ -1,0 +1,7 @@
+cd ./marvel/
+touch black_widow.txt
+echo "Natasha Romanov\n" >> black_widow.txt
+cd ~
+cd ./shell/dc/
+touch wonder_woman.txt
+echo "Diana Prince\n" >> wonder_woman.txt
